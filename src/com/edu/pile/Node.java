@@ -1,11 +1,12 @@
 package com.edu.pile;
 
 public class Node {
-	private int content;
-	private Node referenceNode = null;
+	private Object objeto;
+	private Node referenceNode;
 	
-	public Node(int content) {
-		this.content = content;
+	public Node(Object object) {
+		this.objeto = object;
+		referenceNode = null;
 	}
 	
 	public Node getReferenceNode() {
@@ -18,7 +19,7 @@ public class Node {
 
 	@Override
 	public String toString() {
-		return "Node [content=" + content + "]\n";
+		return "Node [objeto=" + objeto + "]";
 	}
 	
 	
