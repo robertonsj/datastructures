@@ -13,9 +13,16 @@ public class NodeRunner {
 		stack.pushIntoStack(new Node(4));
 		stack.pushIntoStack(new Node(5));
 		
-		queue.enqueue(new Node("roberto"));
+		queue.enqueue(new Node("roberto junior"));
 		queue.enqueue(new Node("rayane"));
 		queue.enqueue(new Node("jose"));
+		queue.enqueue(new Node("roberto pai"));
+		
+		queue.dequeue();
+		queue.dequeue();
+//		queue.dequeue();
+//		queue.dequeue();
+//		queue.dequeue();
 		
 		System.out.println(stack);
 		System.out.println(queue);

@@ -12,6 +12,17 @@ public class QueueCustomized {
 		return node.getReferenceNode() == null ? true : false;		
 	}
 	
+	private Node getFirstNode() {
+		
+		Node firstNode = entryNode;
+		
+		do {			
+			firstNode = firstNode.getReferenceNode();
+		}while(!pointsToNull(firstNode));
+		
+		return firstNode;
+	}
+	
 	public void enqueue(Node node) {
 		if(isEmpty()) {entryNode = node;}
 		else {
@@ -21,21 +32,19 @@ public class QueueCustomized {
 		}
 	}
 	
-	public Node getFirstNode() {
-		Node firstNode = entryNode;
-		/*
-		while(!isEmpty()) {
-			if(firstNode.getReferenceNode() != null) {
-			}else break; 
-		}*/
-		
-		do {			
-			firstNode = firstNode.getReferenceNode();
-		}while(pointsToNull(firstNode));
-		
-		return firstNode;
+	public void dequeue() {
+		Node newFirstNode = entryNode;
+		if(isEmpty()) {
+			System.err.println("The queue is empty!\n");
+		}else if(newFirstNode.getReferenceNode() == null){
+			entryNode = null;
+		} else {
+			while(!newFirstNode.getReferenceNode().equals(getFirstNode())) {
+				newFirstNode = newFirstNode.getReferenceNode();
+			}
+			newFirstNode.setReferenceNode(null);
+		}
 	}
-	
 
 	public String toString() {
 		Node node = entryNode;
