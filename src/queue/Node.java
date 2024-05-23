@@ -16,6 +16,10 @@ public class Node<T> {
 		this.next = node;
 	}
 	
+	public T getData() {
+		return data;
+	}
+	
 	public String toString() {
 		return "Node [data=" + this.data + "]";
 	}
