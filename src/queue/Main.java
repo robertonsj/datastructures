@@ -1,5 +1,7 @@
 package queue;
 
+import stack.CustomStack;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -11,6 +13,12 @@ public class Main {
 		queue.enqueue(3);
 		
 		System.out.println(queue);
+		
+		CustomStack<String> stack = new CustomStack<>();
+		stack.push("José");
+		stack.push("Rayane");
+		stack.push("Roberto");
+		System.out.println(stack);
 	}
 
 }

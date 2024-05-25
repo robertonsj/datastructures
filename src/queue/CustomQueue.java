@@ -42,9 +42,9 @@ public class CustomQueue<T> {
 	
 	public String toString() {
 		Node<T> currentNode = front;
-		StringBuilder queue = new StringBuilder("**** QUEUE ****\n");
+		StringBuilder queue = new StringBuilder("**** QUEUE ****\nFront: ");
 		do {
-			queue.append("<-- " + currentNode);
+			queue.append("--> " + currentNode);
 			currentNode = currentNode.getNext();
 		}while(currentNode != null);
 		return queue.toString();
