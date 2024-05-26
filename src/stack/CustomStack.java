@@ -22,11 +22,11 @@ public class CustomStack<T> {
 		StringBuilder stack = new StringBuilder("**** STACK ****\nTop:\n");
 		Node<T> currentNode = top;
 		
-		do {
+		while(currentNode != null) {	
 			stack.append(currentNode + "\n");
 			currentNode = currentNode.getNext();
-		}while(currentNode != null);
-		
+		}
+		System.out.println();
 		return stack.toString();
 	}
 }

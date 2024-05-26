@@ -47,6 +47,7 @@ public class CustomQueue<T> {
 			queue.append("--> " + currentNode);
 			currentNode = currentNode.getNext();
 		}while(currentNode != null);
+		System.out.println();
 		return queue.toString();
 	}
 	

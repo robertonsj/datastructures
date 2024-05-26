@@ -1,6 +1,7 @@
 package queue;
 
 import stack.CustomStack;
+import linkedlist.CustomLinkedList;
 
 public class Main {
 
@@ -19,6 +20,12 @@ public class Main {
 		stack.push("Rayane");
 		stack.push("Roberto");
 		System.out.println(stack);
+		
+		CustomLinkedList<Double> linkedList = new CustomLinkedList<>();
+		linkedList.add(1.78);
+		linkedList.add(1.72);
+		linkedList.add(1.75);
+		System.out.println(linkedList);
 	}
 
 }
