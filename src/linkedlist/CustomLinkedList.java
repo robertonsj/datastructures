@@ -31,6 +31,5 @@ public class CustomLinkedList<T> {
 		}
 		return linkedList.toString();
 	}
-	
-	
 }
+	
