@@ -21,11 +21,15 @@ public class Main {
 		stack.push("Roberto");
 		System.out.println(stack);
 		
+                System.out.println("**** LINKED LIST ****");
 		CustomLinkedList<Double> linkedList = new CustomLinkedList<>();
 		linkedList.add(1.78);
 		linkedList.add(1.72);
 		linkedList.add(1.75);
 		System.out.println(linkedList);
+                System.out.println("Removed element: " + linkedList.remove(2));
+                System.out.println(linkedList);
+                
 	}
 
 }
