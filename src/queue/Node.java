@@ -1,4 +1,4 @@
-package queue;
+package src.queue;
 
 public class Node<T> {
 	private Node<T> next;
