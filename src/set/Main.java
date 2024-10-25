@@ -31,10 +31,12 @@ ContactCalendar contacts = new ContactCalendar();
 		
 		//PRACTICE TWO
 		PurchaseCart purchaseCart = new PurchaseCart();
-		purchaseCart.registerProduct("Notebook", 3500, 1);
-		purchaseCart.registerProduct("Mouse", 80.00, 2);
-		purchaseCart.registerProduct("Camera", 250.50, 2);
-		purchaseCart.registerProduct("SSD", 550.50, 2);
+		purchaseCart.registerProduct(1L, "Notebook", 3500, 1);
+		purchaseCart.registerProduct(2L, "Mouse", 80.00, 2);
+		purchaseCart.registerProduct(2L, "Mouse", 80.00, 2);
+		purchaseCart.registerProduct(3L, "Camera", 250.50, 2);
+		purchaseCart.registerProduct(4L, "SSD", 550.50, 2);
+		purchaseCart.registerProduct(4L, "SSD", 550.50, 2);
 		
 		purchaseCart.displayProducts();
 	

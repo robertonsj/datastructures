@@ -11,8 +11,8 @@ public class PurchaseCart {
 		this.purchase = new HashSet<>();
 	}
 	
-	public void registerProduct(String item, double price, int amount) {
-		purchase.add(new Product(item, price, amount));
+	public void registerProduct(long id, String item, double price, int amount) {
+		purchase.add(new Product(id, item, price, amount));
 	}
 	
 	public void displayProducts() {

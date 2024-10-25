@@ -1,15 +1,18 @@
 package src.set;
 import java.util.Comparator;
+import java.util.Objects;
 
 public class Product implements Comparable<Product>{
 	private String itemName;
 	private double price;
 	private int amount;
+	private long id;
 	
-	public Product(String item, double price, int amount) {
+	public Product(long id, String item, double price, int amount) {
 		this.itemName = item;
 		this.price = price;
 		this.amount = amount;
+		this.id = id;
 	}
 
 	public String getItemName() {
@@ -38,13 +41,30 @@ public class Product implements Comparable<Product>{
 
 	@Override
 	public String toString() {
-		return "[item=" + itemName + ", price=" + price + ", amount=" + amount + "]";
+		return "[id=" + id + ", item=" + itemName + ", price=" + price + ", amount=" + amount + "]";
 	}
 
 	@Override
 	public int compareTo(Product o) {
 		// TODO Auto-generated method stub
 		return itemName.compareToIgnoreCase(o.getItemName());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		return id == other.id;
 	}
 	
 }
