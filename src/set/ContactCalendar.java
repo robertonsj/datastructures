@@ -17,34 +17,40 @@ public class ContactCalendar {
 	}
 	
 	public void showContact() {
-		System.out.println("\n\n*** Listing all Contacts");
-		System.out.print(contactCalendar);
+		System.out.println("\n*** Displaying all Contacts");
+		for(Contact contact : contactCalendar) {
+			System.out.println(contact);
+		}
+	}
+	public void showContact(Set<Contact> list) {
+		for(Contact contact : list) {
+			System.out.println(contact);
+		}
 	}
 	
-	public Set<Contact> searchByName(String name) {
-		System.out.println("\n\n*** Searching Contact Named " + name.toUpperCase());
+	public void searchByName(String name) {
+		System.out.println("\n*** Searching Contact Named " + name.toUpperCase());
 		Set<Contact> list = new HashSet<>();
 		for(Contact contact : contactCalendar) {
 			if(contact.getName().startsWith(name)) {
 				list.add(contact);
 			}
 		}
-		return list;
+		showContact(list);
 	}
 	
 	public String updatePhoneNumber(String name, int newNumber) {
-		System.out.println("\n\n*** Updating Phone Number ");
-		Contact contact = null;
+		Contact contact;
 		for(Contact c : contactCalendar) {
 			if(c.getName().equalsIgnoreCase(name)) {
 				contact = c;
-				contact.setNumber(newNumber);
 				contactCalendar.remove(c);
+				contact.setNumber(newNumber);
 				contactCalendar.add(contact);
-				return "Calendar updated!";
+				return "\n*** Contact " + name.toUpperCase() + " been updated!";
 			}
 		}
-		return "Contact not updated!\n";
+		return "\n*** Attempt to update contact has failed!";
 	}
 	
 }
