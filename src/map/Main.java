@@ -3,6 +3,7 @@ public class Main{
 	
 	public static void main(String[] args) {
 		
+		/*
 		ContactCalendar contactCalendar = new ContactCalendar();
 //		
 		try {
@@ -27,5 +28,14 @@ public class Main{
 			System.err.println(e.getMessage());
 			System.exit(0);
 		}
+		*/
+		
+		StockProducts products = new StockProducts();
+		products.addProduct(1L, "Laptop", 20, 3500.00);
+		products.addProduct(1L, "notebook", 20, 3500.00);
+		products.addProduct(2L, "SSD", 100, 1500.00);
+		products.addProduct(3L, "RAM Memory", 100, 700.00);
+		
+		products.displayProducts();
 	}
 }
