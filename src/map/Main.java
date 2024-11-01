@@ -35,10 +35,12 @@ public class Main{
 		products.addProduct(1L, "notebook", 20, 3500.00);
 		products.addProduct(2L, "SSD", 100, 1500.00);
 		products.addProduct(3L, "RAM Memory", 100, 700.00);
+		products.addProduct(4L, "PS5", 100, 5000.0);
 		
 		products.displayProducts();
 		products.calculateTotalValueOnStock();
 		products.getMostExpensiveProduct();
 		products.getCheapestProduct();
+		products.getProductWithHighestStockValue();
 	}
 }

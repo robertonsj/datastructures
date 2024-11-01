@@ -48,13 +48,25 @@ public class StockProducts {
 	}
 	
 	
-	//Returns the product which the highest stock value.
+	//Returns the product with the highest stock value.
+	public void getProductWithHighestStockValue() {
+		Product product = null;
+		double stockValue, highestStockValue = Double.MIN_VALUE;
+		for(Product p : stock.values()) {
+			stockValue = p.getPrice() * p.getStockAmount();
+			if(stockValue > highestStockValue) {
+				highestStockValue = stockValue;
+				product = p;
+			}
+		}
+		System.out.println("\n*** The Product with Highest Stock Value\n" + product);
+	}
 	
 	
 	public void displayProducts() {
 		System.out.println("\n*** Displaying Contacts from Calendar");
 		for(Product product : stock.values()) {
-			System.out.println("[item name=" + product.getItemName() + 
+			System.out.println("[item name=" + product.getItemName().toUpperCase() + 
 					", price=" + product.getPrice() + 
 					", stock amount=" + product.getStockAmount() + "]");
 		}
