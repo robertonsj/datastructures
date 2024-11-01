@@ -37,5 +37,8 @@ public class Main{
 		products.addProduct(3L, "RAM Memory", 100, 700.00);
 		
 		products.displayProducts();
+		products.calculateTotalValueOnStock();
+		products.getMostExpensiveProduct();
+		products.getCheapestProduct();
 	}
 }
