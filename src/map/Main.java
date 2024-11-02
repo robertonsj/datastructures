@@ -69,10 +69,11 @@ public class Main{
 			event04.addAttraction("3 - Software Engineering");
 			eventCalendar.addEvent(LocalDate.of(2023, 12, 5), event04);
 			
+			eventCalendar.displayCalendar();
+			eventCalendar.displayUpcomingEvent();
+			
 			Event event03 = new Event("Backend Programming");
 			eventCalendar.addEvent(LocalDate.of(2025, 1, 5), event03);
-			
-			eventCalendar.displayCalendar();
 			
 		} catch (Exception e) {
 			// TODO: handle exception

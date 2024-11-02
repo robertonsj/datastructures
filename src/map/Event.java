@@ -37,7 +37,7 @@ public class Event {
 
 	@Override
 	public String toString() {
-		return "\n*** Event=" + eventName.toUpperCase() + "\n" + getAttractions();
+		return "\n++ Event=" + eventName.toUpperCase() + "\n" + getAttractions();
 	}
 	
 	
