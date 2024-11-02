@@ -20,7 +20,8 @@ public class Event {
 	}
 	public String getAttractions() {
 		if(attractions.isEmpty()) {
-			throw new IllegalStateException("There is No Attractions in this Event!");
+			throw new IllegalStateException("\nWARNING: There is No Attractions in the event "
+					+ getEventName().toUpperCase());
 		} else {
 			String showAttractions = "Attractions of the Event:";
 			for(String att : attractions) {

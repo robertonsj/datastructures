@@ -47,20 +47,36 @@ public class Main{
 		products.getProductWithHighestStockValue();
 		*/
 		
-		EventCalendar eventCalendar = new EventCalendar();
-		
-		Event event01 = new Event("Java for All");
-		event01.addAttraction("1 - Data Types");
-		event01.addAttraction("2 - Data Structures");
-		event01.addAttraction("3 - Generics");
-		eventCalendar.addEvent(LocalDate.of(2024, 11, 5), event01);
-		
-		Event event02 = new Event("Programming the World!");
-		event02.addAttraction("1 - Programming Logic");
-		event02.addAttraction("2 - Clean Code");
-		event02.addAttraction("3 - Software Engineering");
-		eventCalendar.addEvent(LocalDate.of(2024, 12, 5), event02);
-		
-		eventCalendar.displayEvents();
+		try {
+			
+			EventCalendar eventCalendar = new EventCalendar();
+			
+			Event event01 = new Event("Java for All");
+			event01.addAttraction("1 - Data Types");
+			event01.addAttraction("2 - Data Structures");
+			event01.addAttraction("3 - Generics");
+			eventCalendar.addEvent(LocalDate.of(2024, 11, 5), event01);
+			
+			Event event02 = new Event("Programming the World!");
+			event02.addAttraction("1 - Programming Logic");
+			event02.addAttraction("2 - Clean Code");
+			event02.addAttraction("3 - Software Engineering");
+			eventCalendar.addEvent(LocalDate.of(2024, 12, 5), event02);
+			
+			Event event04 = new Event("Artificial Inteligence Nowadays!");
+			event04.addAttraction("1 - Programming Logic");
+			event04.addAttraction("2 - Clean Code");
+			event04.addAttraction("3 - Software Engineering");
+			eventCalendar.addEvent(LocalDate.of(2023, 12, 5), event04);
+			
+			Event event03 = new Event("Backend Programming");
+			eventCalendar.addEvent(LocalDate.of(2025, 1, 5), event03);
+			
+			eventCalendar.displayCalendar();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.err.println(e.getMessage());
+		}
 	}
 }
