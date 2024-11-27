@@ -40,12 +40,10 @@ class DoubleLinkedList<T> {
 	
 	Node<T> firstNode;
 	Node<T> lastNode;
-	int counter;
 	
 	DoubleLinkedList(){
 		this.firstNode = null;
 		this.lastNode = null;
-		this.counter = 0;
 	}
 	
 	//Getters and Setters
@@ -61,9 +59,7 @@ class DoubleLinkedList<T> {
 	public void setLastNode(Node<T> lastNode) {
 		this.lastNode = lastNode;
 	}
-	public int getCounter() {
-		return counter;
-	}
+	
 	
 	void add(T element) {
 		Node<T> newNode = new Node<>(element);
@@ -76,21 +72,30 @@ class DoubleLinkedList<T> {
 			newNode.setPreviousNode(lastNode);
 			setLastNode(newNode);
 		}
-		counter++;
 	}
 	
 	void add(int index, T element) {
 		Node<T> newNode = new Node<>(element);
-		Node<T> auxNode = getFirstNode();
+		Node<T> auxNode = getNode(index);
 		
-		for(int i = 1; i <= index; i++) {
-			auxNode = auxNode.getNextNode();
-		}
 		newNode.setPreviousNode(auxNode.getPreviousNode());
 		auxNode.getPreviousNode().setNextNode(newNode);
 		newNode.setNextNode(auxNode);
 		auxNode.setPreviousNode(newNode);
-		
+	}
+
+	void remove(int index) {
+		Node<T> auxNode = getNode(index);
+		auxNode.getPreviousNode().setNextNode(auxNode.getNextNode());
+		auxNode.getNextNode().setPreviousNode(auxNode.getPreviousNode());
+	}
+	
+	Node<T> getNode(int index) {
+		Node<T> auxNode = getFirstNode();
+		for(int i = 1; i <= index; i++) {
+			auxNode = auxNode.getNextNode();
+		}
+		return auxNode;
 	}
 	
 	void displayNodes() {
@@ -110,12 +115,15 @@ class DoubleLinkedList<T> {
 		doubleLinkedList.add("two");
 		doubleLinkedList.add("three");
 		doubleLinkedList.add("four");
-		doubleLinkedList.displayNodes();
 		
 		doubleLinkedList.add(1, "five");
-		doubleLinkedList.displayNodes();
 		
 		doubleLinkedList.add(3, "six");
+		doubleLinkedList.displayNodes();
+		
+		System.out.println("\nElement at Index 4: " + doubleLinkedList.getNode(4) + "\n");
+		
+		doubleLinkedList.remove(2);
 		doubleLinkedList.displayNodes();
 		
 	}
