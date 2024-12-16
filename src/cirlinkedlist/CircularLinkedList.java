@@ -23,6 +23,22 @@ public class CircularLinkedList<T>{
 		}
 	}
 	
+	void remove() {
+		if(head == null)
+			throw new RuntimeException("Empty List!");
+		else if(head == tail) {
+			head = null;
+			tail = null;
+		} else {
+			Node<T> auxNode = head; // Auxiliary node
+			while(auxNode.getNext() != tail)
+				auxNode = auxNode.getNext();
+			
+			auxNode.setNext(head);
+			tail = auxNode;
+		}
+	}
+	
 	String getList() {
 		if(tail == null) {
 			throw new RuntimeException("\nList is empty.");
@@ -51,15 +67,18 @@ public class CircularLinkedList<T>{
 	public static void main(String[] args) {
 		CircularLinkedList<String> list = new CircularLinkedList<>();
 		try {
+			
 			list.add("Element 01");
 			list.add("Element 02");
-//			list.add("Element 03");
+			list.add("Element 03");
+			list.remove();
+			list.add("Element 04");
+			
 			System.out.println(list.getList());
 		}catch(Exception e) {
 			System.err.println(e.getMessage());
-		}
+		} 
 	}
-	
 }
 
 class Node<T> {
